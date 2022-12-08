@@ -1,3 +1,6 @@
+// round는 정수를 소수로 표현할 수 없음
+// formating 잘 기억하기
+
 line = int(input())
 
 for _ in range(line):
