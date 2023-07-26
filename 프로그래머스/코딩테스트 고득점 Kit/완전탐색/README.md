@@ -4,7 +4,7 @@
 
 <br>
 
-<h2>알고리즘</h3>
+<h2>알고리즘</h2>
 <ul>
   <li><strong>단순 Brute-Force</strong></li>  $\textcolor{gray}{\textsf{: 조건문, 반복문}}$ </li>
   <li><strong>비트마스트 (Bitmask)</strong></li>
@@ -18,6 +18,11 @@
 
 </ul>
 
+<br>
+
+<h2>문제</h2>
+
+- [피로도](https://school.programmers.co.kr/learn/courses/30/lessons/87946?language=python3)
 
 <!-- HTML은 Hyper Text Markup Language, 웹 페이지를 만들기위한 표준 마크 업 언어이다. 
 https://wikidocs.net/book/7596 
