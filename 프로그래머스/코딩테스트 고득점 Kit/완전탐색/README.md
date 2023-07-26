@@ -6,11 +6,11 @@
 
 <h2>알고리즘</h3>
 <ul>
-  <li> <strong>단순 Brute-Force</strong></li>  $\textcolor{gray}{\textsf{: 조건문, 반복문}}$ </li>
-  <li>비트마스트 (Bitmask)</li>
-  <li>재귀함수</li>
-  <li>순열</li>
-  <li>너비 우선 탐색(BFS) / 깊이 우선 탐색(DFS)</li>
+  <li><strong>단순 Brute-Force</strong></li>  $\textcolor{gray}{\textsf{: 조건문, 반복문}}$ </li>
+  <li><strong>비트마스트 (Bitmask)</strong></li>
+  <li><strong>재귀함수</strong></li>
+  <li><strong>순열</strong></li>
+  <li><strong>너비 우선 탐색(BFS) / 깊이 우선 탐색(DFS)</strong></li>
 
   <br>
 
