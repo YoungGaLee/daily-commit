@@ -1,5 +1,6 @@
 # 효율성 통과하는 법 : pop() 하는 부분을 없애고 인덱스로 조회
-
+for문을 통해 이미 O(n)
+pop(0)의 경우 복잡도 O(n)
 
 '''
 정확성  테스트
@@ -50,4 +51,27 @@ def solution(phone_book):
                 answer = False
         
     return answer
-  
+
+
+
+'''
+# 해시 정석
+def solution(phone_book): 
+
+    # 1.Hash map생성
+    hash_map = {} 
+    for nums in phone_book: 
+        hash_map[nums] = 1 
+    
+    # 2.접두어가 Hash map에 존재하는지 찾기 
+    for nums in phone_book: 
+        arr = "" 
+        for num in nums: 
+            arr += num
+    
+            # 3. 본인 자체일 경우는 제외
+            if arr in hash_map and arr != nums:       
+                return False 
+                
+    return True
+'''
