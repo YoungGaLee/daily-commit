@@ -35,19 +35,16 @@
 
 
 def solution(phone_book):
-    len_sort = sorted(phone_book,key=len)
-
     answer = True
-    for i, adj in enumerate(len_sort):
-        count = 0 
-        for number in len_sort[i:]:
-            if number.startswith(adj) == True: 
-                count += 1
-                if count == 2:
-                    answer = False
-                    break
-        if count == 2:
-            break
-                
+    len_sort = sorted(phone_book,key=len)
+    
+    while(answer):
+        adj = len_sort.pop(0)
+        if len(len_sort) == 0 : break
+        
+        for phone in len_sort:
+            if phone.startswith(adj) : 
+                answer = False
+        
     return answer
   
