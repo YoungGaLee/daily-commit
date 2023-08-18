@@ -8,6 +8,17 @@ del 도 O(n)이네..
 시간복잡도는 리스트에서 가장 크다
 https://wayhome25.github.io/python/2017/06/14/time-complexity/
 https://chancoding.tistory.com/43
+
+sort() 활용이 Tip이었는데
+a = [123,128,1234]
+b = ['123','128','1234']
+a.sort()
+b.sort()
+print(a)
+print(b)
+입력값이 숫자인지 문자인지에 따라 다른 것을 주의해야함.
+sort시, 숫자를 문자로 인식해 정렬되는 것을 활용하는 문제도 나올 수 있음.
+
 '''
 
 '''
@@ -44,14 +55,13 @@ https://chancoding.tistory.com/43
 효율성: 16.7
 합계: 100.0 / 100.0
 '''
-
+# Tip: sort할 때, phone_book에 있는 번호는 문자열로 정렬
 def solution(phone_book):
     phone_book.sort()
     for p1, p2 in zip(phone_book, phone_book[1:]):
         if p2.startswith(p1):
             return False
     return True
-
 
 '''
 # 해시 정석
