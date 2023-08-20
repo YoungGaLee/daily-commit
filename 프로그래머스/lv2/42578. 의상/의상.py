@@ -1,13 +1,11 @@
 
 def solution(clothes):
     answer = 1
-    diclothes = {}
-    for name, typ in clothes:
-        if typ in diclothes.keys():
-            diclothes[typ] += 1
-        else:
-            diclothes[typ] = 1
-    for num in diclothes.values():
-        print(num)
-        answer *= (num+1) 
+    dic = {}
+    chunk = [list(x) for x in zip(*clothes)]
+
+    for key in set(chunk[1]): dic[key] = 0
+    for cloth in chunk[1]: dic[cloth] +=1
+    for num in dic.values() : answer *= (num+1)    
+    
     return answer-1
