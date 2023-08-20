@@ -1,4 +1,6 @@
-# 해시 hash
+# 해시 hash 
+
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/42577) 
 
 - 키(Key)를 이용하여 값(Value)를 저장하는 자료구조
 - 해싱의 목적은 정렬보다는 검색
