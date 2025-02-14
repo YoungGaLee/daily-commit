@@ -1,7 +1,4 @@
 # daily-commit    
 
-### [단계별](https://www.acmicpc.net/step)로 1문제씩 진행중 
-- 선별기준 : 이전에 틀린문제 또는 정답률 30% 정도의 난이도
-
-This is a auto push repository for Baekjoon Online Judge created with [BaekjoonHub](https://github.com/BaekjoonHub/BaekjoonHub).
-
+# algorithm repository
+[![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=rkduddl1717)](https://solved.ac/rkduddl1717/)
