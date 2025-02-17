@@ -1,3 +1,8 @@
+/*
+아이디어: (정수입력 > 짝수인지 확인과 동시에 min값 갱신, sum > 출력
+         홀수값 하나도 없을 경우 : 디폴트를 홀수없음(oddExist=False)로 하다가 홀수 들어오면 'true'로 바꿈
+*/
+
 import java.io.*;
 import java.util.*;
 
@@ -17,9 +22,9 @@ public class Main {
             int num = Integer.parseInt(br.readLine());
 
             if(num%2 == 1){
-                oddExist = true;
-                sum += num;
-                min = Math.min(min, num);
+                oddExist = true;     //홀수 존재
+                sum += num;          //sum
+                min = Math.min(min, num);   //min값 갱신
             }
         }
 
