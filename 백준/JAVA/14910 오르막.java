@@ -1,3 +1,10 @@
+/*
+아이디어: 입력을 받아 배열로 저장한 뒤, 정수 하나하나에 대해
+    - 이전 수보다 작은지  >> Bad 출력 후, break (디폴트는 Good으로 설정)
+ */
+                    
+    
+
 import java.io.*;
 import java.util.*;
 
