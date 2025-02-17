@@ -6,23 +6,28 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        String update;
+        String result;
+        String inputWord = br.readLine();
+        String prohibit = "CAMBRIDEGE";
 
-
-        String[] input = br.readLine().split(" ");
-        int before = Integer.MIN_VALUE;
-        String result = "Good";
-
-        for (String num : input){
-            int current = Integer.parseInt(num);
-            if (current < before){
-                result = "Bad";
-                break;
+        for (int i=0; i<prohibit.length(); i++){
+            update = "";
+            for(int j=0; j<inputWord.length(); j++){
+                if (prohibit.charAt(i) == inputWord.charAt(j)){
+                    continue;
+                }else{
+                    update += inputWord.charAt(j);
+                }
             }
-            before = current;
+            inputWord = update;
         }
+        result = inputWord;
+
         bw.write(result);
 
         bw.flush();
         bw.close();
+        br.close();
     }
 }
