@@ -11,51 +11,52 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        ArrayList<String> words = stream(br.readLine().split(""))
-                .collect(Collectors.toCollection(ArrayList::new));
-
+        String inputStr = br.readLine();
         int answer = 0;
-        Stack<String> stack = new Stack<>();
-        String prev = "";
-        int cur = 1; // 1에서 부터 시작
+        int calculate = 1; // 1에서 부터 시작
+
+        Stack<Character> stack = new Stack<>(); // 알맞은 문자열인지 확인하는 기능, pop시키는 기능
+        char prev = 0;
+
 
         loop:
-        for (String word : words) {
+        for (int i=0; i<inputStr.length(); i++) {
+            char frag = inputStr.charAt(i);
+            char current = inputStr.charAt(i);
+            switch (current) {
+                case '(':
+                    calculate *= 2;
+                    stack.push(frag);
+                    break;
 
-            switch (word) {
-                case "(" -> {  
-                    cur *= 2;
-                    stack.push(word);
-                }
-                case "[" -> {
-                    cur *= 3;
-                    stack.push(word);
-                }
-                case ")" -> {  
+                case '[':
+                    calculate *= 3;
+                    stack.push(frag);
+                    break;
 
-                    if (stack.isEmpty() || !stack.peek().equals("(")) { 
-                        answer = 0;
-                        break loop;
-                    } else if (prev.equals("(")) 
-                        answer += cur;
+                case ')':
                     stack.pop();
-                    cur /= 2;
-                }
-                case "]" -> {
-                    if (stack.isEmpty() || !stack.peek().equals("[")) {
-                        answer = 0;
-                        break loop;
-                    } else if (prev.equals("["))
-                        answer += cur;
+
+                    if (prev == '(') {
+                        answer += calculate;
+                    }
+                    calculate /= 2;
+                    break;
+
+                case ']':
                     stack.pop();
-                    cur /= 3;
-                }
+
+                    if (prev == '[') {
+                        answer += calculate;
+                    }
+                    calculate /= 3;
+                    break;
             }
-            prev = word; 
+            prev = current;
         }
 
-        if(!stack.isEmpty()) 
-            answer = 0;
+        if(!stack.isEmpty()) answer = 0;
+
         System.out.println(answer);
     }
 }
