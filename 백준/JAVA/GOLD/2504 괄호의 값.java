@@ -1,4 +1,3 @@
-
 import static java.util.Arrays.*;
 
 import java.io.*;
@@ -13,9 +12,9 @@ public class Main {
 
         String inputStr = br.readLine();
         int answer = 0;
-        int calculate = 1; // 1에서 부터 시작
+        float calculate = 1; // 1에서 부터 시작
 
-        Stack<Character> stack = new Stack<>(); // 알맞은 문자열인지 확인하는 기능, pop시키는 기능
+        Stack<Character> stack = new Stack<>(); 
         char prev = 0;
 
 
@@ -35,7 +34,12 @@ public class Main {
                     break;
 
                 case ')':
-                    stack.pop();
+                    try {
+                        stack.pop();
+                    } catch (Exception e) {
+                        answer = 0;
+                        break loop;
+                    }
 
                     if (prev == '(') {
                         answer += calculate;
@@ -44,7 +48,12 @@ public class Main {
                     break;
 
                 case ']':
-                    stack.pop();
+                    try {
+                        stack.pop();
+                    } catch (Exception e) {
+                        answer = 0;
+                        break loop;
+                    }
 
                     if (prev == '[') {
                         answer += calculate;
@@ -53,6 +62,10 @@ public class Main {
                     break;
             }
             prev = current;
+            if(calculate%1 != 0){
+                answer = 0;
+                break loop;
+            }
         }
 
         if(!stack.isEmpty()) answer = 0;
