@@ -12,7 +12,7 @@ public class Main {
 
         String inputStr = br.readLine();
         int answer = 0;
-        float calculate = 1; // 1에서 부터 시작
+        float calculate = 1; 
 
         Stack<Character> stack = new Stack<>(); 
         char prev = 0;
@@ -21,8 +21,7 @@ public class Main {
         loop:
         for (int i=0; i<inputStr.length(); i++) {
             char frag = inputStr.charAt(i);
-            char current = inputStr.charAt(i);
-            switch (current) {
+            switch (frag) {
                 case '(':
                     calculate *= 2;
                     stack.push(frag);
@@ -61,7 +60,7 @@ public class Main {
                     calculate /= 3;
                     break;
             }
-            prev = current;
+            prev = frag;
             if(calculate%1 != 0){
                 answer = 0;
                 break loop;
